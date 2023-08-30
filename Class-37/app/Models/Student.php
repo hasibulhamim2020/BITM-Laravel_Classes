@@ -5,49 +5,50 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Department;
+use App\Models\Session;
 
 class Student extends Model
 {
     use HasFactory;
-    private $students=[],$department,$departments,$student,$getDpartmentName;
+    private $students=[],$department,$departments,$student,$getDpartmentName,$getSessionYear,$session;
     public function getAlStudent(){
         return $this->students=[
             [
                 'id'=>1,
-                'name'=>'hamim',
-                'email'=>'hamim@gmail.com',
+                'name'=>'Hasibul Hamim',
+                'email'=>'hamimhasibul72@gmail.com',
                 'phone'=>'01732312998',
-                'address'=>'dhaka',
+                'address'=>'Cumilla',
                 'department_id'=>1,
                 'session_id'=>1,
                 'image'=>'hamim.jpg'
             ],
             [
                 'id'=>2,
-                'name'=>'hamim2',
-                'email'=>'hamim2@gmail.com',
+                'name'=>'MD. Ismail',
+                'email'=>'ismail.cse.diu@gmail.com',
                 'phone'=>'01832312998',
-                'address'=>'dhaka',
+                'address'=>'dhanmondi,dhaka.',
                 'department_id'=>2,
                 'session_id'=>1,
                 'image'=>'hamim2.jpg'
             ],
             [
                 'id'=>3,
-                'name'=>'hamim3',
-                'email'=>'hamim3@gmail.com',
+                'name'=>'Akib Buyhain',
+                'email'=>'akib.fftdd@gmail.com',
                 'phone'=>'01932312998',
-                'address'=>'dhaka',
+                'address'=>'Chadpur,Cumilla',
                 'department_id'=>2,
                 'session_id'=>2,
                 'image'=>'hamim3.jpg'
             ],
             [
                 'id'=>4,
-                'name'=>'hamim4',
-                'email'=>'hamim4@gmail.com',
+                'name'=>'Nishat Tasnim',
+                'email'=>'mimkst.2000@gmail.com',
                 'phone'=>'01632312998',
-                'address'=>'dhaka',
+                'address'=>'Kushtia',
                 'department_id'=>1,
                 'session_id'=>3,
                 'image'=>'hamim4.jpg'
@@ -63,10 +64,14 @@ class Student extends Model
 
                 $this->department = new Department();
                 $this->getDpartmentName = $this->department->getDepartmentById($this->student['department_id']);
+                $this->session = new Session();
+                $this->getSessionYear = $this->session->getSessionYearById($this->student['session_id']);
 
 //                array_push($this->student['department_id'],$this->getDpartmentName);
 
                  $this->student['department_name']= $this->getDpartmentName;
+//                return $this->student;
+                $this->student['session_year']= $this->getSessionYear;
                 return $this->student;
             }
 

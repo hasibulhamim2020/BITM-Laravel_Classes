@@ -4,8 +4,8 @@
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 -md-2">
-                    <div class="card">
+                <div class="col-md-8 offset-md-2">
+                    <div>
                         <table class="table table-striped table-bordered table-hover">
                             <tr>
                                 <th>sl</th>

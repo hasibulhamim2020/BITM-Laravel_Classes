@@ -36,9 +36,12 @@ class HomeController extends Controller
     public function details($id){
 //        return $id;
         $this->student = new  Student();
-        return $this->student->studentDetails($id);
+        $this->students = $this->student->studentDetails($id);
 
-        return view('details');
+        return view('details',[
+            'students'=>$this->students
+        ]);
+
     }
 
 }
