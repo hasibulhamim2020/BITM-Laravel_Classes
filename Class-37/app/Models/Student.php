@@ -52,6 +52,26 @@ class Student extends Model
                 'department_id'=>1,
                 'session_id'=>3,
                 'image'=>'hamim4.jpg'
+            ],
+            [
+                'id'=>5,
+                'name'=>'Anamika Chakkar bokkor',
+                'email'=>'anu.borguna@gmail.com',
+                'phone'=>'01352312998',
+                'address'=>'Borguna,Borishal',
+                'department_id'=>2,
+                'session_id'=>4,
+                'image'=>'hamim4.jpg'
+            ],
+            [
+                'id'=>6,
+                'name'=>'Amit Gharami',
+                'email'=>'amit.cse@gmail.com',
+                'phone'=>'01265812998',
+                'address'=>'Potuakhali,Borishal',
+                'department_id'=>1,
+                'session_id'=>2,
+                'image'=>"hamim1221.jpg"
             ]
         ];
     }

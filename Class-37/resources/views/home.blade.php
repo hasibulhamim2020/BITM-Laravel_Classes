@@ -8,15 +8,15 @@
                     <div>
                         <table class="table table-striped table-bordered table-hover">
                             <tr>
-                                <th>sl</th>
-                                <th>name</th>
-                                <th>email</th>
-                                <th>phone</th>
+                                <th>Sl</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
 {{--                                <th>address</th>--}}
-                                <th>image</th>
+                                <th>Image</th>
 {{--                                <th>department</th>--}}
 {{--                                <th>session</th>--}}
-                                <th>action</th>
+                                <th>Action</th>
                             </tr>
 
                     @foreach($students as $student)
@@ -34,7 +34,7 @@
                                     <a href="{{ route('details', [
                                                                 'id'=>$student['id']
                                                                 ]
-                                                                ) }}" class="btn btn-success"> details</a>
+                                                                ) }}" class="btn btn-success">Details</a>
                                 </td>
                             </tr>
 

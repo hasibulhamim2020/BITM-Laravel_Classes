@@ -23,6 +23,10 @@ class Session extends Model
             [
                 'id'=>3,
                 'session_year'=>'2021-2022'
+            ],
+            [
+                'id'=>4,
+                'session_year'=>'2022-2023'
             ]
         ];
     }
