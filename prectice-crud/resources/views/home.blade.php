@@ -1,13 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('master')
+@section('title')
+    Home
+@endsection
 
-</body>
-</html>
+@section('content')
+
+    <section>
+        <div class=" py-5">
+            <div>
+                <h1 class="text-center py-5">Welcome To The Student Management System</h1>
+                <h4 class="pt-5">Here You Find Some Option:</h4>
+                <ol>
+                    <li>Create Student</li>
+                    <li>View All Student</li>
+                    <li>Update Student Data</li>
+                    <li>Delete Student Data</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+@endsection
