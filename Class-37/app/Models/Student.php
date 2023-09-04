@@ -5,73 +5,52 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Department;
-use App\Models\Session;
 
 class Student extends Model
 {
     use HasFactory;
-    private $students=[],$department,$departments,$student,$getDpartmentName,$getSessionYear,$session;
+    private $students=[],$department,$departments,$student,$getDpartmentName,$session,$getSessionName;
     public function getAlStudent(){
         return $this->students=[
             [
                 'id'=>1,
-                'name'=>'Hasibul Hamim',
-                'email'=>'hamimhasibul72@gmail.com',
+                'name'=>'hamim',
+                'email'=>'hamim@gmail.com',
                 'phone'=>'01732312998',
-                'address'=>'Cumilla',
+                'address'=>'dhaka',
                 'department_id'=>1,
                 'session_id'=>1,
-                'image'=>'hamim.jpg'
+                'image'=>'01.jpg'
             ],
             [
                 'id'=>2,
-                'name'=>'MD. Ismail',
-                'email'=>'ismail.cse.diu@gmail.com',
+                'name'=>'hamim2',
+                'email'=>'hamim2@gmail.com',
                 'phone'=>'01832312998',
-                'address'=>'dhanmondi,dhaka.',
+                'address'=>'dhaka',
                 'department_id'=>2,
                 'session_id'=>1,
-                'image'=>'hamim2.jpg'
+                'image'=>'02.jpg'
             ],
             [
                 'id'=>3,
-                'name'=>'Akib Buyhain',
-                'email'=>'akib.fftdd@gmail.com',
+                'name'=>'hamim3',
+                'email'=>'hamim3@gmail.com',
                 'phone'=>'01932312998',
-                'address'=>'Chadpur,Cumilla',
+                'address'=>'dhaka',
                 'department_id'=>2,
                 'session_id'=>2,
-                'image'=>'hamim3.jpg'
+                'image'=>'03.jpg'
             ],
             [
                 'id'=>4,
-                'name'=>'Nishat Tasnim',
-                'email'=>'mimkst.2000@gmail.com',
+                'name'=>'hamim4',
+                'email'=>'hamim4@gmail.com',
                 'phone'=>'01632312998',
-                'address'=>'Kushtia',
+                'address'=>'dhaka',
                 'department_id'=>1,
                 'session_id'=>3,
-                'image'=>'hamim4.jpg'
-            ],
-            [
-                'id'=>5,
-                'name'=>'Anamika Chakkar bokkor',
-                'email'=>'anu.borguna@gmail.com',
-                'phone'=>'01352312998',
-                'address'=>'Borguna,Borishal',
-                'department_id'=>2,
-                'session_id'=>4,
-                'image'=>'hamim4.jpg'
-            ],
-            [
-                'id'=>6,
-                'name'=>'Amit Gharami',
-                'email'=>'amit.cse@gmail.com',
-                'phone'=>'01265812998',
-                'address'=>'Potuakhali,Borishal',
-                'department_id'=>1,
-                'session_id'=>2,
-                'image'=>"hamim1221.jpg"
+                'image'=>'04.jpg'
             ]
         ];
     }
@@ -84,14 +63,16 @@ class Student extends Model
 
                 $this->department = new Department();
                 $this->getDpartmentName = $this->department->getDepartmentById($this->student['department_id']);
-                $this->session = new Session();
-                $this->getSessionYear = $this->session->getSessionYearById($this->student['session_id']);
 
 //                array_push($this->student['department_id'],$this->getDpartmentName);
 
+
+                $this->session = new Session();
+                $this->getSessionName = $this->session->getSessionById($this->student['session_id']);
+
+
                  $this->student['department_name']= $this->getDpartmentName;
-//                return $this->student;
-                $this->student['session_year']= $this->getSessionYear;
+                $this->student['session_name']= $this->getSessionName;
                 return $this->student;
             }
 

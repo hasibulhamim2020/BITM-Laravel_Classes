@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    private $student,$students;
+    private $student,$students,$studentInfo;
 
     public function index(){
         $this->student= new Student();
@@ -36,12 +36,12 @@ class HomeController extends Controller
     public function details($id){
 //        return $id;
         $this->student = new  Student();
-        $this->students = $this->student->studentDetails($id);
+        $this->studentInfo = $this->student->studentDetails($id);
 
         return view('details',[
-            'students'=>$this->students
-        ]);
-
+            'student'=> $this->studentInfo
+            ]
+        );
     }
 
 }

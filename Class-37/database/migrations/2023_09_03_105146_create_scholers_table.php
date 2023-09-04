@@ -11,23 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('scholers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('email')->nullable()->unique();
+            $table->string('phone',11)->nullable()->unique()->comment("max 11 digit");
+            $table->text('image')->nullable();
+            $table->text('address');
             $table->timestamps();
         });
     }
 
     /**
-     * php artisan migrate
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('scholers');
     }
 };

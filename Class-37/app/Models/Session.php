@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Session extends Model
 {
     use HasFactory;
-    private $session;
-    public $item;
+    private $sessions=[],$session;
     public function getAllSession(){
-        return $this->session = [
+        return $this->sessions = [
             [
                 'id'=>1,
                 'session_year'=>'2019-2020'
@@ -23,20 +22,18 @@ class Session extends Model
             [
                 'id'=>3,
                 'session_year'=>'2021-2022'
-            ],
-            [
-                'id'=>4,
-                'session_year'=>'2022-2023'
             ]
         ];
     }
-    public function getSessionYearById($s_id){
-        $this->session = $this->getAllSession();
-        foreach ($this->session as $this->item){
-            if ($this->item['id'] == $s_id){
-                return $this->item['session_year'];
-            }
-        }
+
+    public function getSessionById($id)
+    {
+       $this->sessions = $this->getAllSession();
+       foreach ( $this->sessions as $this->session){
+           if ($this->session['id'] == $id){
+               return $this->session['session_year'];
+       }
 
     }
-}
+
+}}
