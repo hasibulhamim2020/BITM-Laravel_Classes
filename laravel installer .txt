@@ -1,0 +1,24 @@
+==>  composer create-project laravel/laravel first-project /* create laravel folder by power shell*/
+cd first-project // enter folder
+ php artisan serve /* server start */
+write in url  : http://127.0.0.1:8000
+
+-> php artisan make:controller HomeController  /* Home controller create by terminal*/
+
+-> web.php  /* location: routes/web.php*/
+
+-> welcome.blend.php /* location: resource/views/welcome.blend.php */
+
+-> css js add 
+     =>all files have in public folder /* public/directory(css/js/)/style.css */
+
+
+
+modal create command
+	php artisan make:model Person -m
+
+database create table command 
+	php artisan migrate
+
+
+	

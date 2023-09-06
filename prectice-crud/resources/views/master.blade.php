@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('assets')}}/css/bootstrap.css">
 </head>
-<body class="container">
+<body class="container py-5">
 
 @include('headerNavbar')
 

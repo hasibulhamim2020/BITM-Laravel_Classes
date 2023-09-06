@@ -18,4 +18,13 @@ class Student extends Model
         self::$student->address  = $request->address;
         self::$student->save();
     }
+
+    public static function updateinfo($request){
+        self::$student = Student::find($request->id);
+        self::$student->name     = $request->name;
+        self::$student->email    = $request->email;
+        self::$student->phone    = $request->phone;
+        self::$student->address  = $request->address;
+        self::$student->save();
+    }
 }
