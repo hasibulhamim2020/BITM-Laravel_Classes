@@ -11,7 +11,7 @@
                     <div class="card">
                         <div class="card-header"><h5><b>Student Create Form</b></h5></div>
                         <div class="card-body">
-                            <form action="{{route('update')}}" method="post">
+                            <form action="{{route('update')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 {{--                            {{csrf_field()}}--}}
                                 <input type="hidden" value="{{ $student->id }}" name="id">
@@ -30,6 +30,14 @@
                                 <div class="mb-3">
                                     <label for="address" class="form-label">Student address</label>
                                     <textarea id="address"  name="address" class="form-control">{{ $student->address }}</textarea>
+                                </div>
+                                <div>
+                                    <label for="image" class="form-label">Image</label>
+                                    <br>
+                                    <img src="{{ asset($student->image) }}" style="height: 150px" width="150px" alt="Not found">
+                                    <br><br>
+                                    <input id="image" type="file" name="image" class="form-control">
+                                    <br><br>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit Student Data</button>
                             </form>

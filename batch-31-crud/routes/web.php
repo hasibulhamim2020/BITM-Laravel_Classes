@@ -3,21 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SudentController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\SessionController;
 
-///*
-//|--------------------------------------------------------------------------
-//| Web Routes
-//|--------------------------------------------------------------------------
-//|
-//| Here is where you can register web routes for your application. These
-//| routes are loaded by the RouteServiceProvider and all of them will
-//| be assigned to the "web" middleware group. Make something great!
-//|
-//*/
-//
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/add/student',[SudentController::class,'addStudent'])->name('add-student');
@@ -28,3 +16,6 @@ Route::post('/update',[SudentController::class,'update'])->name('update');
 Route::post('/delete/student',[SudentController::class,'deleteinfo'])->name('delete');
 Route::get('/edit/student/{id}',[SudentController::class,'edit'])->name('edit');
 
+
+Route::resources(['departments' => DepartmentController::class]);
+Route::resources(['sessions' => SessionController::class]);

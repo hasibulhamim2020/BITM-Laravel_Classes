@@ -16,6 +16,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('manage-student') }}">Manage Student</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('departments.index') }}">Manage Departments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('departments.create') }}">Add Department</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('sessions.index') }}">Manage sessions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('sessions.create') }}">Add session</a>
+                    </li>
                 </ul>
             </div>
         </div>

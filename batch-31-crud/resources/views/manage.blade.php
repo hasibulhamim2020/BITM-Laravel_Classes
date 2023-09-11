@@ -19,6 +19,7 @@
                                     <th>Phone</th>
                                     <th>Email</th>
                                     <th>Address</th>
+                                    <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                                 @foreach ($students as $student)
@@ -28,6 +29,7 @@
                                     <td>{{ $student->phone }}</td>
                                     <td>{{ $student->email }}</td>
                                     <td>{{ $student->address }}</td>
+                                    <td><img src="{{ asset($student->image) }}" style="height: 50px" width="50px" alt="Not found"></td>
                                     <td>
                                         <a href="{{route('edit',['id'=>$student->id])}}" class="btn btn-primary btn-sm">Edit</a>
 {{--                                        <a href="{{route('delete',['id'=>$student->id])}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this!!')">Delete</a>--}}

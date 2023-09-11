@@ -13,6 +13,8 @@ class SudentController extends Controller
     }
 
     public function store(Request $request){
+
+//        return $request->file('image');
         Student::saveinfo($request);
         return redirect(route('manage-student'));
     }
@@ -44,6 +46,11 @@ class SudentController extends Controller
 //    }
     public function deleteinfo(Request $request){
         $this->student = Student::find($request->id);
+        if ($this->student->image){
+                if (file_exists($this->student->image)){
+                    unlink($this->student->image);
+                }
+            }
         $this->student->delete();
         return back();
     }
