@@ -19,3 +19,7 @@ Route::get('/edit/student/{id}',[SudentController::class,'edit'])->name('edit');
 
 Route::resources(['departments' => DepartmentController::class]);
 Route::resources(['sessions' => SessionController::class]);
+
+Route::get('/dept/wise/student/{id}',[DepartmentController::class,'deptWiseStudent'])->name('dept.wise.student');
+Route::get('/session/wise/student/',[SessionController::class,'sessionWiseStudent'])->name('session.wise.student');
+

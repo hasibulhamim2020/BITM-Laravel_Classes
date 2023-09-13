@@ -32,4 +32,8 @@ class Session extends Model
         }
         self::$session->save();
     }
+
+    public function students(){
+        return $this->hasMany(Student::class);
+    }
 }

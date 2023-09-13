@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <div class="card">
-                        <div class="card-header"><h5><b>product Create Form</b></h5></div>
+                        <div class="card-header"><h5><b>Student Create Form</b></h5></div>
                         <div class="card-body">
                             <form action="{{route('store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
@@ -17,6 +17,28 @@
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Student Name</label>
                                     <input id="name" type="text" name="name" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="department" class="form-label">Student Department</label>
+                                    <select id="department" type="text" name="department_id" class="form-control">
+                                        <option >Please Select A Department</option>
+
+                                        @foreach($departments as $department)
+                                        <option value="{{$department->id}}">{{$department->name}}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="session" class="form-label">Student Session</label>
+                                    <select id="session" type="text" name="session_id" class="form-control">
+                                        <option >Please Select A Session</option>
+
+                                        @foreach($sessions as $session)
+                                            <option value="{{$session->id}}">{{$session->name}}</option>
+                                        @endforeach
+
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Student Email</label>

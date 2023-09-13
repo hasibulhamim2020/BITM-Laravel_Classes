@@ -10,6 +10,8 @@ class DepartmentController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public static $department;
+
     public function index()
     {
        return view('department.index',[
@@ -67,6 +69,15 @@ class DepartmentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        self::$department = Department::find($id);
+        self::$department->delete();
+        return back();
+
+    }
+
+    public function deptWiseStudent($id){
+        return view('department.dept-wise-student',[
+            'department'=>Department::find($id)
+        ]);
     }
 }

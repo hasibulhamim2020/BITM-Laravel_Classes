@@ -16,6 +16,8 @@
                                 <tr>
                                     <th>Sl.</th>
                                     <th>Name</th>
+                                    <th>Department</th>
+                                    <th>Session</th>
                                     <th>Phone</th>
                                     <th>Email</th>
                                     <th>Address</th>
@@ -26,6 +28,8 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $student->name }}</td>
+                                    <td>{{ $student->department->name }}</td>
+                                    <td>{{ $student->session->name }}</td>
                                     <td>{{ $student->phone }}</td>
                                     <td>{{ $student->email }}</td>
                                     <td>{{ $student->address }}</td>

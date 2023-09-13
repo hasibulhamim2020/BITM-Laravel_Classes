@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Models\Department;
+use App\Models\Session;
+use Illuminate\Support\Facades\DB;
 
 class SudentController extends Controller
 {
     public $student;
     public function addStudent(){
-        return view('create');
+        return view('create',[
+            'departments'=>Department::where('status',1)->get(),
+            'sessions'=>Session::where('status',1)->get()
+        ]);
     }
 
     public function store(Request $request){
@@ -20,6 +26,7 @@ class SudentController extends Controller
     }
 
     public function manageStudent(){
+
         return view('manage',[
             'students'=>Student::all()
         ]);
@@ -28,7 +35,9 @@ class SudentController extends Controller
     public function edit($id){
 //        return $id;
         return view('edit',[
-            'student'=>Student::find($id)
+            'student'=>Student::find($id),
+            'departments'=>Department::where('status',1)->get(),
+            'sessions'=>Session::where('status',1)->get()
         ]);
     }
 

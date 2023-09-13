@@ -10,6 +10,7 @@ class SessionController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public static $session;
     public function index()
     {
         return view('session.index',[
@@ -67,6 +68,16 @@ class SessionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        self::$session = Session::find($id);
+        self::$session->delete();
+        return back();
     }
+
+    public function sessionWiseStudent(){
+        return view('session.session-wise-student',[
+            'sessions'=>Session::all()
+        ]);
+    }
+
+
 }

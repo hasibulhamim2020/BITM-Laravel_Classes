@@ -28,6 +28,7 @@
                                         <td>{{ $department->status == 1 ? 'Active' : 'Inactive' }}</td>
                                         <td>
                                             <a href="{{route('departments.edit',$department->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="{{route('dept.wise.student',$department->id)}}" class="btn btn-success btn-sm">department wise student list</a>
 
 
                                             @if($department-> status == 1)
@@ -37,9 +38,10 @@
                                             @endif
 
 
-                                                <form action="{{route('delete',['id'=>$department->id])}}" method="post">
+                                                <form action="{{route('departments.destroy',$department->id)}}" method="post">
                                                 @csrf
-                                                <input type="hidden" value="{{$department->id}}" name="id">
+                                                    @method('DELETE')
+
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this!!')">Delete</button>
                                             </form>
                                         </td>

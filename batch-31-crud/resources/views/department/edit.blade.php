@@ -1,4 +1,5 @@
 @extends('master')
+
 @section('title')
     Create
 @endsection
@@ -30,6 +31,4 @@
             </div>
         </div>
     </section>
-
-
 @endsection

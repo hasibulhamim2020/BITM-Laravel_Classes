@@ -1,9 +1,7 @@
-
 @extends('master')
 @section('title')
     Create
 @endsection
-
 @section('content')
     <section class="py-5">
         <div class="container">
@@ -29,19 +27,18 @@
                                         <td>
                                             <a href="{{route('sessions.edit',$session->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
+                                            <a href="{{route('session.wise.student')}}" class="btn btn-success btn-sm">session wise student list</a>
 
-                                            @if($session-> status == 1)
+                                        @if($session-> status == 1)
                                                 <a href="{{route('sessions.show',$session->id)}}" class="btn btn-info btn-sm">Inactive</a>
                                             @else
                                                 <a href="{{route('sessions.show',$session->id)}}" class="btn btn-info btn-sm">Active</a>
                                             @endif
-
-
-                                                <form action="{{route('delete',['id'=>$session->id])}}" method="post">
+                                                <form action="{{route('sessions.destroy',$session->id)}}" method="post">
                                                 @csrf
-                                                <input type="hidden" value="{{$session->id}}" name="id">
+                                                @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this!!')">Delete</button>
-                                            </form>
+                                                </form>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -52,6 +49,4 @@
             </div>
         </div>
     </section>
-
-
 @endsection
