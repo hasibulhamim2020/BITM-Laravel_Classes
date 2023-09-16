@@ -1,1 +1,8 @@
-<?php
+@extends('master')
+@section('title')
+    Home
+@endsection
+
+@section('content')
+home
+@endsection
