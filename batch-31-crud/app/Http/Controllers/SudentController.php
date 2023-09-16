@@ -19,6 +19,7 @@ class SudentController extends Controller
     }
 
     public function store(Request $request){
+//        return $request;
 
 //        return $request->file('image');
         Student::saveinfo($request);
