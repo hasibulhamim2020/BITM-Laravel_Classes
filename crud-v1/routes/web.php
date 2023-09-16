@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\Studentcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,7 @@ use App\Http\Controllers\Homecontroller;
 |
 */
 
-Route::get('/',[Homecontroller::class,'index'])->name('home');
+Route::get('/',[Homecontroller::class,'index']);
+Route::get('/home',[Studentcontroller::class,'home'])->name('home');
+Route::get('/add/student',[Studentcontroller::class,'addStudent'])->name('add-student');
+Route::get('/view/student',[Studentcontroller::class,'viewStudent'])->name('view-student');
