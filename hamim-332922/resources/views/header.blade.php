@@ -23,8 +23,8 @@
                         Catagory
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">New Catagory Add</a></li>
-                        <li><a class="dropdown-item" href="#">Catagory's List</a></li>
+                        <li><a class="dropdown-item" href="{{route('catagorys.create')}}">New Catagory Add</a></li>
+                        <li><a class="dropdown-item" href="{{route('catagorys.index')}}">Catagory's List</a></li>
                     </ul>
                 </li>
             </ul>

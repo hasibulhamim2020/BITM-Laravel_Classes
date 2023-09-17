@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Catagory;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class CatagoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('product.view',[]);
+        return view('catagory.view',[
+            'catagorys'=>Catagory::all()
+        ]);
     }
 
     /**
@@ -20,7 +22,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        return view('catagory.create');
     }
 
     /**
@@ -28,8 +30,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::saveProduct($request);
-        return redirect(route('products.index'));
+        Catagory::saveCatagory($request);
+        return redirect(route('catagorys.index'));
     }
 
     /**
