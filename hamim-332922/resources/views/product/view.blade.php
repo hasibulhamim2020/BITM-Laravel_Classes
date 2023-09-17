@@ -21,15 +21,21 @@
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
+
+                                @foreach($products as $product)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>Image</td>
-                                    <td></td>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$product->p_name}}</td>
+                                    <td>{{$product->catagory ? $product->catagory->cat_name : 'not found'}}</td>
+                                    <td>{{$product->p_code}}</td>
+                                    <td>{{$product->p_price}}</td>
+                                    <td><img src="{{asset("")}}/{{$product->p_image}}" alt="not found" style="width: 100px"height="100px"></td>
+                                    <td>
+                                        <a href="{{route('products.show',$product->id)}}" class="btn btn-danger">Edit</a>
+                                    </td>
                                 </tr>
+                                @endforeach
+
                             </table>
                         </div>
                     </div>

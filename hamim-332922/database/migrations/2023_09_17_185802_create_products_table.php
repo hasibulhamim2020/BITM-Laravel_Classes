@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('catagory_id')->nullable();
             $table->integer('p_code')->nullable();
             $table->integer('p_price')->nullable();
+            $table->text('p_image')->nullable();
             $table->timestamps();
         });
     }

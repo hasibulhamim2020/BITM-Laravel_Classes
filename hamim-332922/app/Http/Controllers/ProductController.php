@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Catagory;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product.view',[]);
+        return view('product.view',[
+            'products'=>Product::all()
+        ]);
     }
 
     /**
@@ -20,7 +23,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        return view('product.create',[
+            'catagorys'=>Catagory::all()
+        ]);
     }
 
     /**
@@ -28,6 +33,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+//        return $request;
         Product::saveProduct($request);
         return redirect(route('products.index'));
     }
@@ -37,7 +43,11 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+//        return $id;
+        return view('product.edit',[
+            'product'=>Product::find($id),
+            'catagorys'=>Catagory::all()
+        ]);
     }
 
     /**
@@ -53,7 +63,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        Product::saveProduct($request,$id);
+        return redirect(route('products.index'));
     }
 
     /**

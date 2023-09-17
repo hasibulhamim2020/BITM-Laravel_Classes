@@ -11,7 +11,7 @@
                     <div class="card">
                         <div class="card-header"><h5><b>Product Create Form</b></h5></div>
                         <div class="card-body">
-                           <form action="{{route('products.store')}}" method="post"> {{-- enctype="multipart/form-data"--}}
+                           <form action="{{route('products.store')}}" method="post" enctype="multipart/form-data"> {{-- --}}
                                 @csrf
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Product Name</label>
@@ -22,9 +22,9 @@
                                     <select id="department" type="text" name="catagory_id" class="form-control">
                                         <option >Please Select A Catagory</option>
 
-{{--                                        @foreach($departments as $department)--}}
-{{--                                            <option value="{{$department->id}}">{{$department->name}}</option>--}}
-{{--                                        @endforeach--}}
+                                        @foreach($catagorys as $catagory)
+                                            <option value="{{$catagory->id}}">{{$catagory->cat_name}}</option>
+                                        @endforeach
 
                                     </select>
                                 </div>
@@ -36,10 +36,10 @@
                                     <label for="phone" class="form-label">Product Price</label>
                                     <input id="phone" type="text" name="p_price" class="form-control">
                                 </div>
-{{--                                <div class="mb-3">--}}
-{{--                                    <label for="image" class="form-label">Upload image</label>--}}
-{{--                                    <input id="image" type="file" name="p_image" class="form-control">--}}
-{{--                                </div>--}}
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Upload image</label>
+                                    <input id="image" type="file" name="p_image" class="form-control">
+                                </div>
                                 <button type="submit" class="btn btn-primary">Submit Product Data</button>
                             </form>
                         </div>
