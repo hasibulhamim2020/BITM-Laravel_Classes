@@ -26,7 +26,6 @@
                                     <td>{{$student->Phone}}</td>
                                     <td>{{$student->address}}</td>
                                     <td>
-
                                         <a href="{{route('edit-student',['id'=>$student->id])}}" class="btn btn-info">Edit</a>
                                             <form action="{{route('delete-student')}}" method="post">
                                                 @csrf
@@ -34,7 +33,6 @@
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this!!')">Delete</button>
                                             </form>
                                         <a href=""></a>
-
                                     </td>
                                 </tr>
                             @endforeach
